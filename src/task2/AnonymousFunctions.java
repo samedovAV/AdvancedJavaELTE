@@ -60,11 +60,11 @@ public class AnonymousFunctions {
         createArrays.apply(10,10);
 
         // compose
-        BiFunction<Function<String, String>, Function<String, String>, Function<String, String>> compose = (p1, p2) -> {
+        /*BiFunction<Function<String, String>, Function<String, String>, Function<String, String>> compose = (p1, p2) -> {
             return p1.apply(p2.apply());
         };
         Function<String, String> first = s -> "'" + s + "'";
         Function<String, String> second = s -> "-" + s + "-";
-        compose.apply(first, second);
+        compose.apply(first, second);*/
     }
 }
