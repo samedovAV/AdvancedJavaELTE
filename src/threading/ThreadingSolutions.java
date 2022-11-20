@@ -40,5 +40,26 @@ public class ThreadingSolutions {
 
         firstThreadText.start();
         secondThreadText.start();
+
+        // Two goats are trying to cross a narrow bridge from opposite sides.
+        // They meet in the middle, and they start pushing each other.
+        // Independently of each other, the goats take some time, and then push the other goat one step.
+        // Whenever one of the goats is pushed off of the bridge, the game ends.
+        // Take the speed of the goats (how much they wait between pushes) and the length of the bridge as parameters;
+        // make the program log important actions.
+    }
+
+    private String whoWinsTheGame(int speedOfFirst, int speedOfSecond, int bridgeLength) {
+        Function<String, Thread> makeThread = name -> new Thread(() -> {
+            IntStream.range(0, 10_000)
+                    .mapToObj(i -> name + " " + i)
+                    .forEach(System.out::println);
+        });
+        var firstGoat = makeThread.apply("First Goat");
+        var secondGoat = makeThread.apply("Second Goat");
+        firstGoat.start();
+        secondGoat.start();
+
+        return "";
     }
 }

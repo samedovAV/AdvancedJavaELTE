@@ -32,8 +32,8 @@ public class BookStore {
     public boolean loadBooks(String fileName) {
         try {
             Object readedFromFile = new ObjectInputStream(new FileInputStream(fileName)).readObject();
-            Book newBook = new Book();
-            Files.readAllBytes(Path.of(fileName));
+            Book newBook = (Book) readedFromFile;
+            //Files.readAllBytes(Path.of(fileName));
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
