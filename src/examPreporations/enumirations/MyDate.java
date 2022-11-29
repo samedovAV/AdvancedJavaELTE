@@ -1,4 +1,4 @@
-package preporations.enumirations;
+package examPreporations.enumirations;
 
 public class MyDate {
 
